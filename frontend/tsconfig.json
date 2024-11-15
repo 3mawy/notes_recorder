@@ -1,0 +1,54 @@
+{
+  "compilerOptions": {
+    // Target ECMAScript version
+    "target": "ESNext",
+    // Use Define Property for class fields
+    "useDefineForClassFields": true,
+    // Libraries included during compilation
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    // Allow JavaScript files to be compiled
+    "allowJs": true,
+    // Skip type checking of declaration files
+    "skipLibCheck": true,
+    // Enable interoperability between ES modules and CommonJS
+    "esModuleInterop": true,
+    // Allow synthetic default imports
+    "allowSyntheticDefaultImports": true,
+    // Enable all strict type-checking options
+    "strict": true,
+    // Ensure consistent casing in file names
+    "forceConsistentCasingInFileNames": true,
+    // Specify module system to use for compilation
+    "module": "ESNext",
+    // Specify how modules are resolved
+    "moduleResolution": "Node",
+    // Allow importing JSON modules
+    "resolveJsonModule": true,
+    // Ensure each file is treated as a module
+    "isolatedModules": true,
+    // Disable emitting output files
+    "noEmit": true,
+    // Set JSX behavior for React 17+
+    "jsx": "react-jsx",
+    // Disallow fallthrough cases in switch statements
+    "noFallthroughCasesInSwitch": true,
+    // Specify types for testing-library
+    "types": [
+      "@testing-library/jest-dom"
+    ]
+  },
+  // Specify directories to include during compilation
+  "include": [
+    "src"
+  ],
+  // References to other TypeScript config files
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
+}

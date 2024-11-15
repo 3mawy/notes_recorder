@@ -1,0 +1,29 @@
+*.DS_Store
+
+# Django
+/media
+/staticfiles
+
+.venv/
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+*.swn
+*.tmp
+
+# Pytest
+.cache/
+pytest_cache/
+
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+__pycache__/
+*.pyc

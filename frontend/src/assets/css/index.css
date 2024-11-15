@@ -1,0 +1,61 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+.note-editor p span.node-audio>div,  .note-editor p div.node-recorder>div{
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+.editor-container>div{
+  display: flex;
+  flex-direction: column;
+}
+.editor-container, .editor-container>div, .tiptap.ProseMirror{
+  height: 100% !important;
+  flex-grow: 1;
+}
+
+.editor-container {
+  scrollbar-width: none;
+}
+.rhap_controls-section{
+  display: none !important;
+}
+.rhap_container{
+  margin-right: 0 !important;
+}
+.editor-container::-webkit-scrollbar {
+  width: 2px;
+}
+.rhap_current-time {
+  color: #8832ff !important;
+}
+.rhap_container{
+  box-shadow: 0 0 !important;
+}
+.ProseMirror:focus-visible {
+  outline: none;
+}
+
+.editor-toolbar {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.note-editor .sound-wave {
+  width: 100%;
+}
+
+.note-editor input[type="file"] {
+  margin-top: 1rem;
+}
+
+
+

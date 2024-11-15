@@ -1,0 +1,25 @@
+-r base.txt
+
+django-extensions==3.2.3
+django-debug-toolbar==4.4.6
+
+drf-spectacular==0.27.2
+attrs==24.2.0
+jsonschema==4.23.0
+jsonschema-specifications==2024.10.1
+referencing==0.35.1
+rpds-py==0.20.0
+
+#Stubs
+djangorestframework-stubs
+django-stubs[compatible-mypy]==5.1.0
+django-filter-stubs
+
+# Code quality
+flake8==7.1.1
+black==24.10.0
+pre-commit==4.0.1
+isort >= 5.8.0
+flake8-print  # Forbid print statement in code use logging. instead
+flake8-bugbear  # Catch common errors
+flake8-printf-formatting  # forbid %s use fstring instead

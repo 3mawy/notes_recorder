@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres
+    container_name: notes_recorder_db
+    environment:
+      - POSTGRES_USER=notes_recorder
+      - POSTGRES_PASSWORD=notes_recorder
+      - POSTGRES_DB=notes_recorder
+    ports:
+      - "5332:5432"
+    volumes:
+      - notes_recorder_data:/var/lib/postgresql/data
+    networks:
+      - notes_recorder_network
+
+  web:
+    build:
+      context: ./backend
+      dockerfile: infra/docker/Dockerfile-dev
+    volumes:
+      - ./backend:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - FRONTEND_URL=http://localhost:5173
+      - POSTGRES_USER=notes_recorder
+      - POSTGRES_HOST=db
+      - POSTGRES_PASSWORD=notes_recorder
+      - POSTGRES_DATABASE=notes_recorder
+      - POSTGRES_PORT=5332
+      - DJANGO_ENV=dev
+      - AUTH_ENABLED=True
+      - SECRET_KEY=django-insecure-#&&6ylggg6fzq%f4a7!dv6pf5#p9k+g6xipbja8splg-1k2
+    networks:
+      - notes_recorder_network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    command: npm run dev
+    volumes:
+      - ./frontend:/app
+      - node_modules:/app/node_modules
+    ports:
+      - "5173:5173"
+    depends_on:
+      - web
+    env_file:
+      - ./frontend/.env
+    networks:
+      - notes_recorder_network
+
+volumes:
+  notes_recorder_data:
+  node_modules:
+
+networks:
+  notes_recorder_network:
